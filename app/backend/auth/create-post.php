@@ -24,7 +24,7 @@ if (Input::exists()) {
                 Post::create(array(
                     'title'  => Input::get('title'),
                     'content'  => Input::get('content'),
-                    'user_id'      => $user->data()->uid,
+                    'user_id'      => $user->data()->user_id,
                     'channel_id'    => Input::get('channel_id'),
                 ));
 
