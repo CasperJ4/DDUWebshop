@@ -42,7 +42,7 @@ class User
             $id = $this->data()->user_id;
         }
 
-        if (!$this->_db->update('users', $id, $fields))
+        if (!$this->_db->update('users', 'user_id', $id, $fields))
         {
             throw new Exception('Unable to update the user.');
         }
