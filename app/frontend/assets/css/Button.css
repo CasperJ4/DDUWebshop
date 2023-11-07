@@ -1,0 +1,52 @@
+.btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    color: white;
+    border: 2px solid #1db954;
+    /* Solid black border */
+    border-radius: 0.625em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    /* Ensure the text stays above the :after pseudo-element */
+    overflow: hidden;
+    transition: color 0.5s, background-color 1.5s, border-color 1.5s;
+    /* Smooth transition for border color */
+}
+
+.btn:hover {
+    color: black;
+    border-color: rgb(0, 0, 0);
+    /* Change border color to red on hover */
+}
+
+.btn:after {
+    content: "TILFØJ";
+    /* Set the content for hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: absolute;
+    z-index: 1;
+    /* Lower z-index than the text */
+    left: -100%;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.btn:hover:after {
+    transform: skewX(0deg) scale(1, 1);
+    /* Reset skew to 0 and scale to full size */
+    transition: transform 0.5s;
+}
+
+/* No need for the span styles as we are not using a span element */
